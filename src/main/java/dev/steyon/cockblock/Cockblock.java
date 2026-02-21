@@ -52,7 +52,7 @@ public class Cockblock {
 
         // Register event listeners
         server.getEventManager().register(this, new DomainBlocklistListener(config));
-        server.getEventManager().register(this, new PingBlocklistListener(config));
+        server.getEventManager().register(this, new PingBlocklistListener(config, logger));
 
         // Register /cockblock command
         CommandManager commandManager = server.getCommandManager();
