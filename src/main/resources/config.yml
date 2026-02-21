@@ -1,0 +1,14 @@
+
+whitelist-mode: false
+
+blocked-domains:
+  - "blocked.example.com"
+  - "badactor.net"
+
+allowed-domains:
+  - "myserver.com"
+  - "play.myserver.com"
+
+# Kick message shown to blocked players.
+# Supports MiniMessage format: https://docs.advntr.dev/minimessage/format.html
+kick-message: "<red><bold>Zugriff verweigert</bold></red><newline><gray>Du darfst dich nicht mit dieser Domain verbinden.</gray>"
