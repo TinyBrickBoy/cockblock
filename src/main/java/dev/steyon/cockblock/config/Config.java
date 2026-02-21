@@ -16,6 +16,8 @@ public class Config {
     private List<String> allowedDomains = new ArrayList<>();
     private String kickMessage = "<red><bold>Zugriff verweigert</bold></red><newline><gray>Du darfst dich nicht mit dieser Domain verbinden.</gray>";
     private boolean whitelistMode = false;
+    private int fakeOnlinePlayers = -1;
+    private int fakeMaxPlayers = -1;
 
     private final Path configPath;
 
@@ -44,6 +46,8 @@ public class Config {
         allowedDomains = root.node("allowed-domains").getList(String.class, new ArrayList<>());
         kickMessage = root.node("kick-message").getString(kickMessage);
         whitelistMode = root.node("whitelist-mode").getBoolean(false);
+        fakeOnlinePlayers = root.node("fake-online-players").getInt(-1);
+        fakeMaxPlayers = root.node("fake-max-players").getInt(-1);
     }
 
     /**
@@ -84,5 +88,13 @@ public class Config {
 
     public boolean isWhitelistMode() {
         return whitelistMode;
+    }
+
+    public int getFakeOnlinePlayers() {
+        return fakeOnlinePlayers;
+    }
+
+    public int getFakeMaxPlayers() {
+        return fakeMaxPlayers;
     }
 }

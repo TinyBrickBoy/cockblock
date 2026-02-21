@@ -9,6 +9,11 @@ allowed-domains:
   - "myserver.com"
   - "play.myserver.com"
 
+# Fake player count shown in the server list for blocked domains.
+# Set to -1 to keep the real values.
+fake-online-players: 0
+fake-max-players: 0
+
 # Kick message shown to blocked players.
 # Supports MiniMessage format: https://docs.advntr.dev/minimessage/format.html
 kick-message: "<red><bold>Zugriff verweigert</bold></red><newline><gray>Du darfst dich nicht mit dieser Domain verbinden.</gray>"

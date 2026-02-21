@@ -11,6 +11,7 @@ import com.velocitypowered.api.proxy.ProxyServer;
 import dev.steyon.cockblock.command.CockblockCommand;
 import dev.steyon.cockblock.config.Config;
 import dev.steyon.cockblock.listener.DomainBlocklistListener;
+import dev.steyon.cockblock.listener.PingBlocklistListener;
 import org.slf4j.Logger;
 
 import java.io.IOException;
@@ -49,8 +50,9 @@ public class Cockblock {
             return;
         }
 
-        // Register event listener
+        // Register event listeners
         server.getEventManager().register(this, new DomainBlocklistListener(config));
+        server.getEventManager().register(this, new PingBlocklistListener(config));
 
         // Register /cockblock command
         CommandManager commandManager = server.getCommandManager();
